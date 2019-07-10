@@ -1,3 +1,26 @@
 {
-  "extends": "./node_modules/@adonisjs/mrm-preset/_tsconfig"
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "commonjs",
+    "lib": [
+      "es2017"
+    ],
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "removeComments": true,
+    "declaration": true,
+    "moduleResolution": "node",
+    "outDir": "dist",
+    "strictNullChecks": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "include": [
+    "src",
+    "providers"
+  ],
+  "exclude": [
+    "node_modules",
+    "build",
+    "dist"
+  ]
 }

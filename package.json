@@ -2,35 +2,79 @@
   "name": "adonis-apollo2-gql",
   "version": "1.0.1",
   "description": "Apollo v2 provider for the Adonis framework",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/valmirphp/adonis-apollo2-gql"
+  },
   "scripts": {
+    "dev": "tsc --watch",
     "pretest": "npm run lint",
     "test": "node japaFile.js",
     "mrm": "mrm --preset=@adonisjs/mrm-preset",
     "prepublishOnly": "npm run build",
     "lint": "tslint --project tsconfig.json",
+    "lint-fix": "tslint --fix --project tsconfig.json",
     "clean": "del build",
     "compile": "npm run lint && npm run clean && tsc",
     "build": "npm run compile",
     "commit": "git-cz"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "GraphQL",
+    "Apollo",
+    "Apollo2",
+    "Server",
+    "Adonis",
+    "Javascript"
+  ],
+  "author": "Valmir Barbosa",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/valmirphp/adonis-apollo2-gql/issues"
+  },
+  "homepage": "https://github.com/valmirphp/adonis-apollo2-gql#readme",
+  "dependencies": {
+    "@adonisjs/framework": "^5.0.9"
+  },
   "devDependencies": {
+    "@adonisjs/ace": "^5.0.8",
+    "@adonisjs/bodyparser": "^2.0.9",
+    "@adonisjs/fold": "^4.0.9",
+    "@adonisjs/middleware-base": "^1.0.0",
     "@adonisjs/mrm-preset": "^2.0.3",
+    "@adonisjs/sink": "^1.0.17",
+    "@poppinss/dev-utils": "^1.0.0",
+    "@poppinss/http-server": "^1.1.5",
+    "@poppinss/logger": "^1.1.0",
+    "@types/graphql": "^14.2.2",
     "@types/node": "^12.0.12",
+    "adonis-apollo2": "file:../adonis-apollo2",
     "commitizen": "^3.1.1",
     "cz-conventional-changelog": "^2.1.0",
     "del-cli": "^2.0.0",
     "doctoc": "^1.4.0",
+    "graphql": "^14.4.2",
+    "graphql-tools": "^4.0.5",
     "husky": "^3.0.0",
     "japa": "^2.0.10",
+    "macroable": "^2.0.2",
+    "mock-fs": "^4.10.1",
     "mrm": "^1.2.2",
     "pkg-ok": "^2.3.1",
+    "prettier": "^1.18.2",
+    "supertest": "^4.0.2",
     "ts-node": "^8.3.0",
     "tslint": "^5.18.0",
+    "tslint-config-prettier": "^1.18.0",
     "tslint-eslint-rules": "^5.4.0",
+    "tslint-plugin-prettier": "^2.0.1",
     "typescript": "^3.5.2"
+  },
+  "peerDependencies": {
+    "@adonisjs/fold": "^4.0.9",
+    "@adonisjs/bodyparser": "^2.0.9"
   },
   "nyc": {
     "exclude": [
@@ -40,12 +84,6 @@
       ".ts"
     ]
   },
-  "main": "build/index.js",
-  "files": [
-    "build/src",
-    "build/index.d.ts",
-    "build/index.js"
-  ],
   "husky": {
     "hooks": {
       "pre-commit": "doctoc README.md --title='## Table of contents' && git add README.md",

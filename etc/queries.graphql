@@ -1,0 +1,21 @@
+subscription BookingAdd {
+  bookAdded{
+    title
+  }
+}
+
+
+mutation AddBook2($title: String!, $author: String) {
+  addBook(title: $title, author: $author) {
+    title
+  }
+}
+
+
+query{
+  books {
+    title
+    author
+  }
+}
+

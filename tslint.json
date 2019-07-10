@@ -1,6 +1,10 @@
 {
   "extends": [
-    "@adonisjs/mrm-preset/_tslint"
+    "@adonisjs/mrm-preset/_tslint",
+    "tslint-plugin-prettier",
+    "tslint-config-prettier"
   ],
-  "rules": {}
+  "rules": {
+    "prettier": true
+  }
 }
